@@ -70,6 +70,13 @@ lib/
    flutter pub get
    ```
 
+### Environment Setup
+1. Create a file named env.prod in the root of your project.
+2. Add the following content to the env.prod file:
+   ```sh
+   AUTH_TOKEN="your_default_auth_token_here"
+   ```
+
 ### Running the App
 
 1. Ensure a device or emulator is running.
