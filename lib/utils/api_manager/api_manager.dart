@@ -11,9 +11,6 @@ class ApiManager {
       : _dio = dio ??
             Dio(BaseOptions(baseUrl: 'https://api.themoviedb.org/3/', headers: {
               'accept': 'application/json',
-              // this is hardcoded here since theres no login and the token is always the same
-              'Authorization':
-                  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNWQ3YjBhMTNmOGNlODBmOTBlOWFmMGVhNDA2NGEwOCIsIm5iZiI6MTczNzk3Njc2Mi43Miwic3ViIjoiNjc5NzZiYmEwOWMyNTJlM2FiMjNjZmQ1Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.kPzZAQJ7IsvFHJhwV7JcQX7u13JqcLg0sILfDenLjio',
             })),
         _sharedPreferencesManager = sharedPreferencesManager;
 
@@ -26,10 +23,7 @@ class ApiManager {
 
   void setAuthToken(String token) {
     // this is how it should be when the token changes
-    // _dio.options.headers['Authorization'] = 'Bearer $token';
-    _dio.options.headers['Authorization'] =
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNWQ3YjBhMTNmOGNlODBmOTBlOWFmMGVhNDA2NGEwOCIsIm5iZiI6MTczNzk3Njc2Mi43Miwic3ViIjoiNjc5NzZiYmEwOWMyNTJlM2FiMjNjZmQ1Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.kPzZAQJ7IsvFHJhwV7JcQX7u13JqcLg0sILfDenLjio';
-    _dio.options.headers['accept'] = 'application/json';
+    _dio.options.headers['Authorization'] = 'Bearer $token';
   }
 
   Future<void> fetchConfiguration() async {
